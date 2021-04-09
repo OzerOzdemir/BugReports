@@ -7,6 +7,7 @@ causes the list to flicker.
 **Project Folder:** [SimpleFlicker](SimpleFlicker)
 
 **Repro Video:** [Flicker.mov](SimpleFlicker/Flicker.mov)
+**Repro Video2:** [Flicker2.mov](SimpleFlicker/Flicker2.mov)
 
 
 **BUG REPRO:** 
@@ -20,6 +21,12 @@ causes a clear flicker on a Release build (as well as Debug build)
 
 The flicker mostly goes away when the Sleep argument is set to 100 (i.e.
 10 insertions /sec)
+
+Note: the cell size, number of items, and item insertion frequency have been
+set to these values only to make it easier to show the flickering. If you
+set them to lesser values, it still happens. For example the [Flicker2.mov](SimpleFlicker/Flicker2.mov)
+file shows with cell size 200, number of insertion 1000, and it still flickers
+when resizing the window.
 
 This has been verified on a Macbook Pro macOS Big Sur 11.2.3
 QT Version 6.0.1
