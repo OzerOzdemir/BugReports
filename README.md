@@ -6,7 +6,7 @@ causes the list to flicker.
 
 **Project Folder:** [SimpleFlicker](SimpleFlicker)
 
-**Repro Video:** [Flicker.mov](Flicker.mov)
+**Repro Video:** [Flicker.mov](SimpleFlicker/Flicker.mov)
 
 
 **BUG REPRO:** 
