@@ -26,13 +26,14 @@ QImage makeImage(int num)
 
 Item Catalog::getItem(int row)
 {
-    return itemList.at(row);
+    listMutex.lock();
+    auto item = itemList.at(row);
+    listMutex.unlock();
+    return item;
 }
 
 void Catalog::generateItems(int numberOfItems, int sleepMs)
 {
-    qDebug() << "Generating one";
-
     for (int i = 0; i < numberOfItems; i++)
     {
         if (canceled)
@@ -43,7 +44,10 @@ void Catalog::generateItems(int numberOfItems, int sleepMs)
         item.Id = i;
         item.Name = QString("Item_%1").arg(i);
         item.thumbnail = makeImage(i);
+
+        listMutex.lock();
         itemList.append(item);
+        listMutex.unlock();
         emit ItemeAdded(item, i);
     }
 }

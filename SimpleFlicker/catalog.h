@@ -21,6 +21,7 @@ signals:
 
 private:
     QList<Item> itemList;
+    QMutex listMutex;
 };
 
 #endif // CATALOG_H

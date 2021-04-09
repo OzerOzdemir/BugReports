@@ -70,7 +70,6 @@ bool ItemModel::insertRows(int row, int count, const QModelIndex &parent)
     endInsertRows();
 
     return true;
-
 }
 
 bool ItemModel::removeRows(int row, int count, const QModelIndex &parent)
